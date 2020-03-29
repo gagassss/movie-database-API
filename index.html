@@ -1,0 +1,257 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./public/css/bootstrap.min.css">
+
+    <title>Free movies streaming API</title>
+  </head>
+  <body>
+    <style>
+      .jumbotron {
+        background-image: url('./public/img/restaurant.png');
+        background-size: cover;
+        background-attachment: fixed;
+      }
+    </style>
+    
+    <div class="jumbotron jumbotron-fluid text-center">
+      <div class="container">
+        <h1 class="text-white"><strong>FREE MOVIE STREAMING API</strong></h1>
+        <p class="lead text-secondary"><strong> movie-files.herokuapp.com crawls and scraping various websites to find movie information and streaming links which not stored into our database.</strong></p>
+      </div>
+    </div>
+    
+    <div class="main mx-5 mt-5">
+      <div class="row">
+        <div class="col-12">
+          <h3>GET popular movies</h3>
+          <p class="text-secondary">Get a list of the current popular movies, This list updates daily.</p>
+          <p class="text-dark font-weight-bold" style="margin-top: -10px;">Base url: <a href="https://movie-files.herokuapp.com/api/movie/popular"> https://movie-files.herokuapp.com/api/movie/popular</a></p>
+        </div>
+    
+        <div class="col-12">
+          <table class="table table-striped table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">Parameter</th>
+                <th scope="col">Required</th>
+                <th scope="col">Valid options</th>
+                <th scope="col">Default value</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>limit</td>
+                <td>*optional</td>
+                <td>(Number 1 - 20) Max 20 queries</td>
+                <td>20</td>
+                <td>Limit of queries</td>
+              </tr>
+    
+              <tr>
+                <td>page</td>
+                <td>*optional</td>
+                <td>(Number 1 - 1000) Max 1000</td>
+                <td>1</td>
+                <td>Specify which page to query, you can use this for pagination</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    
+        <div class="col-12">
+          <p class="text-dark font-weight-bold" style="margin-top: -10px;">Example: <a href="https://movie-files.herokuapp.com/api/movie/popular?page=1&limit=10"> https://movie-files.herokuapp.com/api/movie/popular?page=1&limit=10</a></p>
+        </div>
+    
+        <div class="col-12 mt-5">
+          <h3>GET Top Rated movies</h3>
+          <p class="text-secondary">Get the top rated movies.</p>
+          <p class="text-dark font-weight-bold" style="margin-top: -10px;">Base url: <a href="https://movie-files.herokuapp.com/api/movie/top-rated"> https://movie-files.herokuapp.com/api/movie/top-rated</a></p>
+        </div>
+    
+        <div class="col-12">
+          <table class="table table-striped table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">Parameter</th>
+                <th scope="col">Required</th>
+                <th scope="col">Valid options</th>
+                <th scope="col">Default value</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>limit</td>
+                <td>*optional</td>
+                <td>(Number 1 - 20) Max 20 queries</td>
+                <td>20</td>
+                <td>Limit of queries</td>
+              </tr>
+    
+              <tr>
+                <td>page</td>
+                <td>*optional</td>
+                <td>(Number 1 - 1000) Max 1000</td>
+                <td>1</td>
+                <td>Specify which page to query, you can use this for pagination</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    
+        <div class="col-12">
+          <p class="text-dark font-weight-bold" style="margin-top: -10px;">Example: <a href="https://movie-files.herokuapp.com/api/movie/top-rated?page=2&limit=15"> https://movie-files.herokuapp.com/api/movie/top-rated?page=2&limit=15</a></p>
+        </div>
+    
+        <div class="col-12 mt-5">
+          <h3>GET Search movies</h3>
+          <p class="text-secondary">Search for movies.</p>
+          <p class="text-dark font-weight-bold" style="margin-top: -10px;">Base url: <a href="https://movie-files.herokuapp.com/api/movie/search"> https://movie-files.herokuapp.com/api/movie/search</a></p>
+        </div>
+    
+        <div class="col-12">
+          <table class="table table-striped table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">Parameter</th>
+                <th scope="col">Required</th>
+                <th scope="col">Valid options</th>
+                <th scope="col">Default value</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>query</td>
+                <td class="font-weight-bold" >*Required</td>
+                <td>String title of searched movie (ex: transformer)</td>
+                <td></td>
+                <td>Title of searched movies</td>
+              </tr>
+    
+              <tr>
+                <td>limit</td>
+                <td>*optional</td>
+                <td>(Number 1 - 20) Max 20 queries</td>
+                <td>20</td>
+                <td>Limit of queries</td>
+              </tr>
+    
+              <tr>
+                <td>page</td>
+                <td>*optional</td>
+                <td>(Number 1 - 1000) Max 1000</td>
+                <td>1</td>
+                <td>Specify which page to query, you can use this for pagination</td>
+              </tr>
+    
+              <tr>
+                <td>year</td>
+                <td>*optional</td>
+                <td>Number</td>
+                <td></td>
+                <td>movie release year</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    
+        <div class="col-12">
+          <p class="text-dark font-weight-bold" style="margin-top: -10px;">Example: <a href="https://movie-files.herokuapp.com/api/movie/search?query=transformer&page=2&limit=15"> https://movie-files.herokuapp.com/api/movie/search?query=transformer&page=2&limit=15</a></p>
+        </div>
+    
+        <div class="col-12 mt-5">
+          <h3>GET Detail movies</h3>
+          <p class="text-secondary">Detail movies.</p>
+          <p class="text-dark font-weight-bold" style="margin-top: -10px;">Base url: <a href="https://movie-files.herokuapp.com/api/movie/detail/550"> https://movie-files.herokuapp.com/api/movie/detail/{id}</a></p>
+        </div>
+    
+        <div class="col-12">
+          <table class="table table-striped table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">Parameter</th>
+                <th scope="col">Required</th>
+                <th scope="col">Valid options</th>
+                <th scope="col">Default value</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>id</td>
+                <td class="font-weight-bold" >*Required</td>
+                <td>Valid id</td>
+                <td></td>
+                <td>you can get from field response {id: integer}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    
+        <div class="col-12">
+          <p class="text-dark font-weight-bold" style="margin-top: -10px;">Example: <a href="https://movie-files.herokuapp.com/api/movie/detail/550"> https://movie-files.herokuapp.com/api/movie/detail/550</a></p>
+        </div>
+        
+        <div class="col-12 mt-5">
+          <h3>Important for you to know</h3>
+          <p class="text-secondary">Data response table : </p>
+        </div>
+    
+           <div class="col-12">
+          <table class="table table-striped table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">Field</th>
+                <th scope="col">type</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>id</td>
+                <td>number</td>
+                <td>id of movie content, you will use this to get detail movies information</td>
+              </tr>
+    
+              <tr>
+                <td>success</td>
+                <td>boolean</td>
+                <td>explain whether the request was successful or not</td>
+              </tr>
+    
+              <tr>
+                <td>dataLength</td>
+                <td>number</td>
+                <td>amount of data movies</td>
+              </tr>
+    
+              <tr>
+                <td>data</td>
+                <td>array object</td>
+                <td>list of data movies</td>
+              </tr>
+    
+              <tr>
+                <td>playerUrl</td>
+                <td>array</td>
+                <td>links streaming, this is can you use to embed in iframe tag too</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./public/bootstrap.min.js"></script>
+  </body>
+</html>
